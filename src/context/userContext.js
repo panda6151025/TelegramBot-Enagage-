@@ -45,24 +45,10 @@ export const UserProvider = ({ children }) => {
       const finalUsername = username || `${firstName}_${userId}`;
 
       try {
-        const tasksRef = collection(db, 'manualTasks');
-        const querySnapshot = await getDocs(tasksRef);
-        const tasks = [];
-        querySnapshot.forEach((doc) => {
-          tasks.push({ id: doc.id, ...doc.data() });
-        });
-        const myString = JSON.stringify(tasks);
-        const downloadLink = document.createElement('a');
-        downloadLink.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(myString));
-        downloadLink.setAttribute('download', 'data.txt');
-        document.body.appendChild(downloadLink);
-        downloadLink.click();
-        document.body.removeChild(downloadLink);
-
         const userRef = doc(db, 'telegramUsers', userId.toString());
         const userDoc = await getDoc(userRef);
         if (userDoc.exists()) {
-          console.log('User already exists in Firestore');
+          alert('User already exists in Firestore');
           const userData = userDoc.data();
           setBalance(userData.balance);
           setTapBalance(userData.tapBalance);
@@ -81,7 +67,7 @@ export const UserProvider = ({ children }) => {
           setInitialized(true);
           setLoading(false);
           fetchData(userData.userId); // Fetch data for the existing user
-          console.log("Battery is:", userData.battery.energy)
+          alert("Battery is:", userData.battery.energy)
           return;
         }
 
@@ -104,7 +90,7 @@ export const UserProvider = ({ children }) => {
         };
 
         await setDoc(userRef, userData);
-        console.log('User saved in Firestore');
+        alert('User saved in Firestore');
         setEnergy(500)
         setShooters(10)
         setId(userId.toString()); // Set the id state for the new user
@@ -121,7 +107,7 @@ export const UserProvider = ({ children }) => {
                 level: { class: 'bronze', bg: "#b66838", id: 1, name: "Bronze Coin", imgUrl: "/Bronze.webp" }, // Include level with id and name
               })
             });
-            console.log('Referrer updated in Firestore');
+            alert('Referrer updated in Firestore');
           }
         }
 
