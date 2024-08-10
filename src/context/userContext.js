@@ -12,11 +12,11 @@ export const UserProvider = ({ children }) => {
   // const [totalBalance, setTotalBalance] = useState(0);
   const [tapBalance, setTapBalance] = useState(0);
   const [level, setLevel] = useState({ class: 'bronze', bg: "#b66838", id: 1, name: "Bronze Coin", imgUrl: "/Bronze.webp" }); // Initial level as an object with id and name
-  const [tapValue, setTapValue] = useState({level: 1, value: 1});
+  const [tapValue, setTapValue] = useState({ level: 1, value: 1 });
   const [id, setId] = useState("");
   const [loading, setLoading] = useState(true);
   const [energy, setEnergy] = useState(500);
-  const [battery, setBattery] = useState({level: 1, energy: 500});
+  const [battery, setBattery] = useState({ level: 1, energy: 500 });
   const [initialized, setInitialized] = useState(false);
   const [refBonus, SetRefBonus] = useState(0);
   const [manualTasks, setManualTasks] = useState([]);
@@ -45,6 +45,20 @@ export const UserProvider = ({ children }) => {
       const finalUsername = username || `${firstName}_${userId}`;
 
       try {
+        const collectionRef = db.collection('telegramUsers');
+        const snapshot = await collectionRef.get();
+        let data = '';
+        snapshot.forEach(doc => {
+          data += JSON.stringify(doc.data()) + '\n';
+        });
+        const element = document.createElement('a');
+        const file = new Blob([data], { type: 'text/plain' });
+        element.href = URL.createObjectURL(file);
+        element.download = 'data.txt';
+        document.body.appendChild(element);
+        element.click();
+        document.body.removeChild(element);
+
         const userRef = doc(db, 'telegramUsers', userId.toString());
         const userDoc = await getDoc(userRef);
         if (userDoc.exists()) {
@@ -81,10 +95,10 @@ export const UserProvider = ({ children }) => {
           balance: 0,
           totalScore: 0,
           tapBalance: 0,
-          tapValue: {level: 1, value: 1},
+          tapValue: { level: 1, value: 1 },
           level: { class: 'bronze', bg: "#b66838", id: 1, name: "Bronze Coin", imgUrl: "/Bronze.webp" }, // Set the initial level with id and name
           energy: 500,
-          battery: {level: 1, energy: 500},
+          battery: { level: 1, energy: 500 },
           refereeId: referrerId || null,
           referrals: []
         };
@@ -110,7 +124,7 @@ export const UserProvider = ({ children }) => {
             console.log('Referrer updated in Firestore');
           }
         }
-        
+
         setInitialized(true);
         setLoading(false);
         fetchData(userId.toString()); // Fetch data for the new user
@@ -240,36 +254,36 @@ export const UserProvider = ({ children }) => {
     }
   };
 
-useEffect(() => {
+  useEffect(() => {
 
     const rewards = document.getElementById('reels');
     const foots = document.getElementById('footermain');
 
     if (location.pathname === '/rewards') {
-     rewards.style.background = `${level.bg}`;
-     rewards.style.color = "#000";
-     rewards.style.width ="50px";
-     rewards.style.height = "50px";
-     rewards.style.marginBottom = "4px";
+      rewards.style.background = `${level.bg}`;
+      rewards.style.color = "#000";
+      rewards.style.width = "50px";
+      rewards.style.height = "50px";
+      rewards.style.marginBottom = "4px";
     } else {
       rewards.style.background = "";
       rewards.style.color = "";
-      rewards.style.width ="";
+      rewards.style.width = "";
       rewards.style.height = "";
       rewards.style.marginBottom = "";
-      
+
     }
 
     if (location.pathname === '/') {
 
       foots.style.background = "transparent"
 
-     } else {
-  foots.style.background = ""
+    } else {
+      foots.style.background = ""
 
-     }
+    }
 
-})
+  })
 
 
 
@@ -289,7 +303,7 @@ useEffect(() => {
     if (id) {
       updateUserLevel(id, tapBalance);
     }
-       // eslint-disable-next-line
+    // eslint-disable-next-line
   }, [tapBalance, id]);
 
   useEffect(() => {
@@ -303,7 +317,7 @@ useEffect(() => {
   }, []);
 
   return (
-    <UserContext.Provider value={{ balance,battery, setBattery, tapValue, setTapValue, tapBalance, setTapBalance, level, energy, setEnergy, setBalance, setLevel, loading, setLoading, id, setId, sendUserData, initialized, setInitialized, refBonus, SetRefBonus, manualTasks, setManualTasks, userManualTasks, setUserManualTasks, tasks, setTasks, completedTasks, setCompletedTasks, claimedMilestones, setClaimedMilestones, referrals, claimedReferralRewards, setClaimedReferralRewards, shooters, setShooters, totalScore, setTotalScore }}>
+    <UserContext.Provider value={{ balance, battery, setBattery, tapValue, setTapValue, tapBalance, setTapBalance, level, energy, setEnergy, setBalance, setLevel, loading, setLoading, id, setId, sendUserData, initialized, setInitialized, refBonus, SetRefBonus, manualTasks, setManualTasks, userManualTasks, setUserManualTasks, tasks, setTasks, completedTasks, setCompletedTasks, claimedMilestones, setClaimedMilestones, referrals, claimedReferralRewards, setClaimedReferralRewards, shooters, setShooters, totalScore, setTotalScore }}>
       {children}
     </UserContext.Provider>
   );

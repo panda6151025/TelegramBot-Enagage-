@@ -6,7 +6,7 @@ const axios = require('axios');
 const cors = require('cors');
 const app = express()
 app.use(express.json())
-const web_link = "https://ffd752b88e3c.ngrok.app";
+const web_link = "https://telegram-bot-enagage.vercel.app";
 const community_link = "https://t.me/concept_developer";
 
 app.use(cors());
