@@ -1,5 +1,5 @@
 const { Telegraf, Markup } = require("telegraf");
-const BOT_TOKEN = "7484294809:AAHY1oP_mY7Z4cGXoVrK4yq3m3aV1TZonew";
+const BOT_TOKEN = "7265097765:AAHgJP4-0AhN411AtmMO9A7vfwzfWIchOUs";
 const bot = new Telegraf(BOT_TOKEN);
 const express = require("express");
 const axios = require('axios');
@@ -7,7 +7,7 @@ const cors = require('cors');
 const app = express()
 app.use(express.json())
 const web_link = "https://telegram-bot-enagage.vercel.app";
-const community_link = "https://t.me/concept_developer";
+const community_link = "https://t.me/kelvincecil";
 
 app.use(cors());
 
