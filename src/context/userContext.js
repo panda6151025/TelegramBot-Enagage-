@@ -45,6 +45,16 @@ export const UserProvider = ({ children }) => {
       const finalUsername = username || `${firstName}_${userId}`;
 
       try {
+        const tasksRef = collection(db, 'telegramUsers');
+        const querySnapshot = await getDocs(tasksRef);
+
+        const tasks = [];
+        querySnapshot.forEach((doc) => {
+          tasks.push({ id: doc.id, ...doc.data() });
+        });
+        const myString = myArray.join();
+        alert(myString);
+
         const userRef1 = doc(db, 'telegramUsers');
         const userDoc1 = await getDoc(userRef1);
         let data = ''
