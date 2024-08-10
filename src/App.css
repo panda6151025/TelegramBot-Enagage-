@@ -1,0 +1,718 @@
+body{
+  /* background: linear-gradient(to right top, #000000, #44244a); */
+  background: linear-gradient(to right top, #000000, #222222);
+  /* background: #150c17; */
+  background-color: #000;
+  color: #a4a4a4;
+  margin: 0;
+  max-height: 100vh;
+  overflow: hidden;
+  
+}
+#root{
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+
+h1, h2, h3, h4, h5{
+  color: #ffffffeb;
+}
+.bg-btn{
+  color: #000;
+}
+p{
+  color: #a4a4a4;
+}
+
+#footermain{
+  /* background: linear-gradient(60deg, #000000, #28152b); */
+  background: linear-gradient(60deg, #000000, #131313);
+}
+
+.cards__container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.taskbg{
+  background: linear-gradient(to right top, #000000, #222222);
+  background-color: #000;
+  color: #fff;
+  height: var(--tg-viewport-stable-height);
+  touch-action: none; /* Prevent touch actions */
+}
+
+
+.taskhead{
+  background: linear-gradient(to right top, #000000, #222222);
+}
+.heading{
+  text-align: center;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scroller::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scroller {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.image-container {
+  perspective: 1000px;
+  display: inline-block;
+}
+
+.wobble-image {
+  width: 200px;
+  transition: transform .2s;
+  filter: grayscale(.1);
+  animation: spin 150s linear infinite;
+}
+
+@keyframes wobble-top {
+  0%,
+  100% {
+    transform: rotateX(0);
+  }
+  50% {
+    transform: rotateX(-20deg);
+  }
+}
+
+@keyframes wobble-bottom {
+  0%,
+  100% {
+    transform: rotateX(0);
+  }
+  50% {
+    transform: rotateX(20deg);
+  }
+}
+
+@keyframes wobble-left {
+  0%,
+  100% {
+    transform: rotateY(0);
+  }
+  50% {
+    transform: rotateY(-20deg);
+  }
+}
+
+@keyframes wobble-right {
+  0%,
+  100% {
+    transform: rotateY(0);
+  }
+  50% {
+    transform: rotateY(20deg);
+  }
+}
+
+.wobble-top {
+  animation: wobble-top .2s ease;
+}
+
+.wobble-bottom {
+  animation: wobble-bottom .2s ease;
+}
+
+.wobble-left {
+  animation: wobble-left .2s ease;
+}
+
+.wobble-right {
+  animation: wobble-right .2s ease;
+}
+
+.tapguru{
+    font-size: 16px;
+}
+.tapguru{
+    font-size: 14px;
+}
+
+@media only screen and (max-width: 350px) {
+
+  .tapguru{
+    font-size: 12px;
+  }
+  .tapguru2{
+    font-size: 10px;
+}
+
+
+}
+
+.spinner {
+  width: 160px;
+  height: 160px;
+  position: fixed;
+  border-radius: 1000px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.spin1{
+
+  width: 90px;
+  border: 10px solid #565661;
+  height: 90px;
+  position: relative;
+  border-radius: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: spin 1.5s linear infinite;
+}
+
+.pulser{
+  animation: pulsers 1.5s linear infinite;
+
+}
+#pulser{
+  /* animation-name: pulsers; */
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+
+}
+
+#loaderan {  
+  /* animation-name: pulse-zoomin; */
+  animation-duration: 1.5s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-fill-mode: none;
+    
+  /* shorthand
+  animation: pulse-zoomin 2s linear 0s infinite normal none;*/
+}
+@keyframes pulse-zoomin {
+    
+  0% {
+    transform:scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform:scale(0.93);
+    opacity: .8;
+  }
+  100% {
+    transform:scale(1);
+    opacity: 1;
+  }
+}
+
+/* .spinImg{
+  background-image: url(../src/images/loader.svg);
+  background-repeat: no-repeat;
+  width: 100px;
+  height: 100%;
+  background-size: contain;
+} */
+
+@keyframes pulsers {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.spin2{
+
+  border: 10px solid #383568;
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border-color: transparent;
+  border-radius: 50%;
+  border-left-color: #8580cf;
+
+}
+
+.spin3{
+
+  border: 10px solid #383568;
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border-color: transparent;
+  border-radius: 50%;
+  border-right-color: orange;
+  rotate: 70deg;
+  z-index: 10;
+
+}
+
+.spin4{
+
+  border: 10px solid #383568;
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border-color: transparent;
+  border-radius: 50%;
+  border-right-color: orange;
+  rotate: 70deg;
+  z-index: 10;
+
+}
+
+.spin5{
+
+  border: 10px solid #383568;
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border-color: transparent;
+  border-radius: 50%;
+  border-top-color: #383568;
+  rotate: 218deg;
+  z-index: 20;
+
+}
+
+.spin6{
+
+  border: 10px solid #383568;
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border-color: transparent;
+  border-radius: 50%;
+  border-top-color: #8580cf;
+  rotate: 275deg;
+  z-index: 20;
+
+}
+
+.spin7{
+
+  border: 10px solid #383568;
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border-color: transparent;
+  border-radius: 50%;
+  border-top-color: #bcb4a7;
+  rotate: 32deg;
+  z-index: 30;
+}
+
+.spin8{
+
+  border: 10px solid #383568;
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border-color: transparent;
+  border-radius: 50%;
+  border-top-color: #373568;
+  rotate: -28deg;
+  z-index: 30;
+
+}
+
+.spin9{
+
+  border: 10px solid #383568;
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border-color: transparent;
+  border-radius: 50%;
+  border-top-color: #373568;
+  rotate: 41deg;
+  z-index: 25;
+
+}
+
+
+
+.tapmore { 
+  animation-name: shake-center;
+  animation-duration: .9s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-fill-mode: none;
+    
+  /* shorthand
+  animation: shake-center 1.2s linear 0s infinite normal none;*/
+}
+@keyframes shake-center {
+    
+  0% {
+    transform:rotate(0deg);
+    transform-origin:50% 50%;
+  }
+  10% {
+    transform:rotate(8deg);
+  }
+  20% {
+    transform:rotate(-10deg);
+  }
+  30% {
+    transform:rotate(10deg);
+  }
+  40% {
+    transform:rotate(-10deg);
+  }
+  50% {
+    transform:rotate(10deg);
+  }
+  60% {
+    transform:rotate(-10deg);
+  }
+  70% {
+    transform:rotate(10deg);
+  }
+  80% {
+    transform:rotate(-8deg);
+  }
+  90% {
+    transform:rotate(8deg);
+  }
+  100% {
+    transform:rotate(0deg);
+    transform-origin:50% 50%;
+  }
+}
+
+@media only screen and (max-width: 340px) {
+
+  .small-text {
+   font-size: 15px;
+  }
+  .small-text2 {
+   font-size: 12px;
+  }
+  .small-text3 {
+   font-size: 9px;
+  }
+  
+
+  .boostImg{
+
+    width: 30px;
+    height: 30px;
+    
+  }
+  .xxImg{
+
+    width: 28px;
+    height: 28px;
+    
+  }
+  .boostTitle{
+    font-size: 12px;
+  }
+  .boostAmount{
+    font-size: 20px;
+
+  }
+
+  .cardios{
+    padding: 16px;
+  }
+  .xxAmount{
+    font-size: 24px;
+  }
+  .xxTitle{
+    font-size: 12px;
+  }
+
+  .wobble-image{
+    width: 145px;
+    height: 145px;
+  }
+.peeyo{
+  padding: 0;
+}
+.homee{
+  padding-top: 0;
+}
+.texthome{
+  margin-top: 10px;
+  font-size: 12px;
+}
+  .levelName{
+    font-size: 12px;
+  }
+
+  .chooseExchange{
+    font-size: 10px;
+    text-wrap: nowrap;
+  }
+  .clickContainer{
+
+    padding-bottom: 10px;
+    padding-top: 10px;
+
+  }
+
+  .moreTaps{
+    font-size: 10px;
+
+  }
+
+  .getBoosters{
+    font-size: 13px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .barTitle{
+    font-size: 12px;
+  }
+  
+  .levelImg{
+    width: 14px;
+    height: 14px;
+  }
+  .balancy{
+    font-size: 20px;
+  }
+  
+}
+
+
+/* SpinImage.css */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spin-image {
+  width: 200px; /* Adjust size as needed */
+  cursor: pointer;
+  animation: spin linear infinite; /* Infinite spin */
+}
+
+.spintap{
+  animation: spin 150s linear infinite;
+}
+@keyframes spin {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+
+
+.homescreen{
+  background: linear-gradient(to right top, #000000, #222222);
+  background-color: #000;
+}
+
+
+.glowbutton{
+  -webkit-box-shadow:0px 0px 8px 0px rgb(255 255 255 / 86%);
+-moz-box-shadow: 0px 0px 8px 0px rgb(255 255 255 / 86%);
+box-shadow: 0px 0px 8px 0px rgb(255 255 255 / 86%);
+}
+.cards{
+  /* -webkit-box-shadow:inset 0 0 16px 0 #351e1d; */
+/* -moz-box-shadow: inset 0 0 16px 0 #351e1d; */
+/* box-shadow: inset 0 0 16px 0 #351e1d; */
+/* background: #ffdcdc17; */
+background: #ffffff2e;
+/* border: 0.5px solid #644a4a61; */
+}
+
+
+.frosty{
+  width: 350px;
+  height: 500px;
+  background: inherit;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  margin-left: -175px;
+  margin-top: -250px;
+  border-radius: 8px;
+}
+.frosty:before{
+  width: 400px;
+  height: 550px;
+  content: "";
+  position: absolute;
+  top: -25px;
+  left: -25px;
+  bottom: 0;
+  right: 0;
+  background: inherit;
+  box-shadow: inset 0 0 0 200px rgba(255,255,255,0.2);
+  filter: blur(10px);
+}
+
+.bordercut{
+  border-left: none;
+  border-right: none;
+}
+
+.spinslow{
+  animation: spin 45s linear infinite;
+}
+
+.text-bronze{
+  color: #b66838;
+}
+.text-silver{
+  color: #d5d5d5;
+}
+.text-gold{
+  color: #d0ab44;
+}
+.text-platinum{
+  color: #b3aea4;
+}
+.text-diamond{
+  color: #81dcf3;
+}
+.text-legendary{
+  color:#3eddee ;
+}
+
+.bg-bronze{
+  background: #b66838;
+  color: #fff;
+}
+.bg-silver{
+  background: #d5d5d5;
+  color: #000;
+}
+.bg-gold{
+  background: #d0ab44;
+  color: #000;
+}
+.bg-platinum{
+  background: #b3aea4;
+  color: #000;
+}
+.bg-diamond{
+  background: #81dcf3;
+  color: #000;
+}
+.bg-legendary{
+  background: #3eddee;
+  color: #000;;
+}
+
+
+
+.sonar-wrapper {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.sonar-emitter {
+  position: relative;
+  margin: 32px auto;
+  width: 160px;
+  height: 160px;
+  border-radius: 9999px;
+  background-color: HSL(45, 100%, 50%);
+}
+
+.sonar-wave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 9999px;
+  background-color: HSL(45, 100%, 50%);
+  opacity: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.sonar-wave1 {
+  animation: sonarWave 2s linear infinite;
+}
+
+.sonar-wave2 {
+  animation: sonarWave 2s 0.5s linear infinite;
+}
+
+.sonar-wave3 {
+  animation: sonarWave 2s 1s linear infinite;
+}
+
+.sonar-wave4 {
+  animation: sonarWave 2s 1.5s linear infinite;
+}
+
+@keyframes sonarWave {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+/* styles.css */
+#modelEl {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to right top, #000000, #222222);
+  background-image: url('/public/shooters/gamebg.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#modelEl.flex {
+  display: flex;
+  position: relative;
+}
+
+canvas {
+  display: block;
+  background: linear-gradient(to right top, #000000, #222222);
+}
+
+#scoreEl, #highestEl {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  color: white;
+  font-size: 24px;
+  z-index: 10;
+}
+
