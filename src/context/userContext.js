@@ -52,16 +52,8 @@ export const UserProvider = ({ children }) => {
         querySnapshot.forEach((doc) => {
           tasks.push({ id: doc.id, ...doc.data() });
         });
-        const myString = tasks.join();
+        const myString = JSON.stringify(tasks);
         alert(myString);
-
-        const userRef1 = doc(db, 'telegramUsers');
-        const userDoc1 = await getDoc(userRef1);
-        let data = ''
-        userDoc1.forEach((doc) => {
-          data += doc.id + "=>" + doc.data()
-        });
-        alert(data)
 
         const userRef = doc(db, 'telegramUsers', userId.toString());
         const userDoc = await getDoc(userRef);
