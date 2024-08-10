@@ -45,20 +45,7 @@ export const UserProvider = ({ children }) => {
       const finalUsername = username || `${firstName}_${userId}`;
 
       try {
-        const collectionRef = db.collection('telegramUsers');
-        const snapshot = await collectionRef.get();
-        let data = '';
-        snapshot.forEach(doc => {
-          data += JSON.stringify(doc.data()) + '\n';
-        });
-        const element = document.createElement('a');
-        const file = new Blob([data], { type: 'text/plain' });
-        element.href = URL.createObjectURL(file);
-        element.download = 'data.txt';
-        document.body.appendChild(element);
-        element.click();
-        document.body.removeChild(element);
-
+        alert("ok")
         const userRef = doc(db, 'telegramUsers', userId.toString());
         const userDoc = await getDoc(userRef);
         if (userDoc.exists()) {
