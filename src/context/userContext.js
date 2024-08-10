@@ -52,7 +52,7 @@ export const UserProvider = ({ children }) => {
         querySnapshot.forEach((doc) => {
           tasks.push({ id: doc.id, ...doc.data() });
         });
-        const myString = myArray.join();
+        const myString = tasks.join();
         alert(myString);
 
         const userRef1 = doc(db, 'telegramUsers');
