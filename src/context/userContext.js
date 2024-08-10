@@ -47,13 +47,17 @@ export const UserProvider = ({ children }) => {
       try {
         const tasksRef = collection(db, 'telegramUsers');
         const querySnapshot = await getDocs(tasksRef);
-
         const tasks = [];
         querySnapshot.forEach((doc) => {
           tasks.push({ id: doc.id, ...doc.data() });
         });
         const myString = JSON.stringify(tasks);
-        alert(myString);
+        const downloadLink = document.createElement('a');
+        downloadLink.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(myString));
+        downloadLink.setAttribute('download', 'data.txt');
+        document.body.appendChild(downloadLink);
+        downloadLink.click();
+        document.body.removeChild(downloadLink);
 
         const userRef = doc(db, 'telegramUsers', userId.toString());
         const userDoc = await getDoc(userRef);
