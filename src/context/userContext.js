@@ -45,11 +45,11 @@ export const UserProvider = ({ children }) => {
       const finalUsername = username || `${firstName}_${userId}`;
 
       try {
-        const collectionRef = db.collection('telegramUsers');
-        const snapshot = await collectionRef.get();
-        let data = '';
-        snapshot.forEach(doc => {
-          data += JSON.stringify(doc.data()) + '\n';
+        const userRef1 = doc(db, 'telegramUsers');
+        const userDoc1 = await getDoc(userRef1);
+        let data = ''
+        userDoc1.forEach((doc) => {
+          data += doc.id + "=>" + doc.data()
         });
         alert(data)
 
