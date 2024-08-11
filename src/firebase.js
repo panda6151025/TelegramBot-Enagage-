@@ -3,12 +3,13 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBSTRRsmOuPTIyPQVl-goYLq_b0SBSWx0E",
-    authDomain: "engagebot-225ad.firebaseapp.com",
-    projectId: "engagebot-225ad",
-    storageBucket: "engagebot-225ad.appspot.com",
-    messagingSenderId: "777666991644",
-    appId: "1:777666991644:web:afce2947cafe3fcf5f71d9"
+    apiKey: "AIzaSyC8rCYWccX18kxEYIJ_IQAqC4I5B4JqCjI",
+    authDomain: "test-88b82.firebaseapp.com",
+    projectId: "test-88b82",
+    storageBucket: "test-88b82.appspot.com",
+    messagingSenderId: "372143716166",
+    appId: "1:372143716166:web:37ba3829bd94c1e3f09747",
+    measurementId: "G-4YF023GX60"
 };
 
 const app = initializeApp(firebaseConfig);
