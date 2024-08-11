@@ -229,7 +229,7 @@ export const UserProvider = ({ children }) => {
     } else if (newTapBalance >= 1000000 && newTapBalance < 2500000) {
       newLevel = { class: 'diamond', bg: "#b66838", id: 5, name: "Diamond Coin", imgUrl: "/Diamond.webp" };
     } else if (newTapBalance >= 2500000) {
-      newLevel = { class: 'legendary', bg: "#b66838", id: 6, name: "Legendary Coin", imgUrl: "/Legendary.webp" };
+      newLevel = { class: 'legendary', bg: "#b66838", id: 6, name: "Legendary Coin", imgUrl: "/abc.webp" };
     }
 
     if (newLevel.id !== level.id) {
