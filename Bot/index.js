@@ -40,6 +40,6 @@ More buddies, more coins.`, {
 
 bot.launch();
 
-app.listen(3002, () => {
+app.listen(3003, () => {
   console.log("server is me and now running")
 })

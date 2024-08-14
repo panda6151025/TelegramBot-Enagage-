@@ -150,7 +150,7 @@ const Game = () => {
     // Draw the background image
     c.drawImage(backgroundImage, 0, 0, canvasRef.current.width, canvasRef.current.height);
 
-    const player = new Ball(canvasRef.current.width / 2, canvasRef.current.height / 2, 20, playerImage);
+    const player = new Ball(canvasRef.current.width / 2, canvasRef.current.height / 2, 25, playerImage);
     player.draw(c);
 
     particlesRef.current.forEach((particle, index) => {
@@ -270,7 +270,7 @@ const Game = () => {
       setCongrats(true)
 
       setTimeout(() => {
-          setCongrats(false)
+        setCongrats(false)
       }, 4000)
       console.log('newshots is', newShots)
       console.log('Bonus claimed successfully')
@@ -278,56 +278,56 @@ const Game = () => {
       console.error('Error claiming task:', error);
     }
   };
-console.log('shooters is', shooters)
+  console.log('shooters is', shooters)
 
 
-//   const claimReward = async () => {
-//     if (id) {
-//     if (Shooters > 0) {
-//       setIsDisabled(false);
-//       const newRemainingClicks = freeGuru - 1;
-//       setFreeGuru(newRemainingClicks);
-      
-//       // Update the Firestore document
-//       const userRef = doc(db, 'telegramUsers', id.toString());
-//       await updateDoc(userRef, {
-//         freeGuru: newRemainingClicks,
-//         timeSta: new Date() 
-//       });
-//       startTimer();
-//       setMainTap(false);
-//       setTapGuru(true);
-//       location('/'); // Navigate to /home without refreshing the page
-//       setCongrats(true)
-//       setTimeout(() => {
-//         setCongrats(false)
-//     }, 2000)
-//     } else {
-//       setIsDisabled(true);
-//     }
-//     };
-//   };
+  //   const claimReward = async () => {
+  //     if (id) {
+  //     if (Shooters > 0) {
+  //       setIsDisabled(false);
+  //       const newRemainingClicks = freeGuru - 1;
+  //       setFreeGuru(newRemainingClicks);
 
-//   const calculateTimeRemaining = () => {
-//     const now = new Date();
-//     const nextDate = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
-//     const timeDiff = nextDate - now;
-  
-//     const hours = Math.floor(timeDiff / (1000 * 60 * 60));
-//     const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
-//     const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
-  
-//     return { hours, minutes, seconds };
-//   };
-//   const [timeRemaining, setTimeRemaining] = useState(calculateTimeRemaining());
+  //       // Update the Firestore document
+  //       const userRef = doc(db, 'telegramUsers', id.toString());
+  //       await updateDoc(userRef, {
+  //         freeGuru: newRemainingClicks,
+  //         timeSta: new Date() 
+  //       });
+  //       startTimer();
+  //       setMainTap(false);
+  //       setTapGuru(true);
+  //       location('/'); // Navigate to /home without refreshing the page
+  //       setCongrats(true)
+  //       setTimeout(() => {
+  //         setCongrats(false)
+  //     }, 2000)
+  //     } else {
+  //       setIsDisabled(true);
+  //     }
+  //     };
+  //   };
 
-//   useEffect(() => {
-//     const interval = setInterval(() => {
-//       setTimeRemaining(calculateTimeRemaining());
-//     }, 1000);
-    
-//     return () => clearInterval(interval); // Clear interval on component unmount
-//   }, []);
+  //   const calculateTimeRemaining = () => {
+  //     const now = new Date();
+  //     const nextDate = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
+  //     const timeDiff = nextDate - now;
+
+  //     const hours = Math.floor(timeDiff / (1000 * 60 * 60));
+  //     const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+  //     const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+  //     return { hours, minutes, seconds };
+  //   };
+  //   const [timeRemaining, setTimeRemaining] = useState(calculateTimeRemaining());
+
+  //   useEffect(() => {
+  //     const interval = setInterval(() => {
+  //       setTimeRemaining(calculateTimeRemaining());
+  //     }, 1000);
+
+  //     return () => clearInterval(interval); // Clear interval on component unmount
+  //   }, []);
 
 
   const formatNumberCliam = (num) => {
@@ -355,94 +355,92 @@ console.log('shooters is', shooters)
       <canvas ref={canvasRef}></canvas>
 
       {isGameOver ? (
-              <div id="modelEl" style={{ display: isGameOver ? 'flex' : 'none' }}>
-              <div className='w-full px-4'>
-                    <div className='flex w-full px-4 py-8 bg-cards rounded-[15px] items-center justify-center relative flex-col space-y-3'>
+        <div id="modelEl" style={{ display: isGameOver ? 'flex' : 'none' }}>
+          <div className='w-full px-4'>
+            <div className='flex w-full px-4 py-8 bg-cards rounded-[15px] items-center justify-center relative flex-col space-y-3'>
 
-                        {!gameStarted ? (
-                        <>
-                              
-            <button id="startGameBtn" onClick={startGame} className='font-medium text-primary'>Start New Game</button>
-                        </>
-                        ) : (
-                        <>
-                                        <button
-                      onClick={closeGames}
-                      className="flex items-center justify-center absolute right-4 top-4 text-center rounded-[12px] font-medium text-[16px]"
-                    >
-                     <IoClose size={24} className="text-[#9a96a6]"/>
-                    </button>
-                                        <h1 className='text-[16px] font-semibold'>Game Over</h1>
-                <h2 className='font-medium'>Rewards: <span id="bigScoreEl">{score}</span></h2>
-                <button className={`bg-${level.class} px-4 py-2 w-full text-[15px] font-semibold rounded-[8px]`} onClick={claimReward}>Claim rewards</button>
-               
-                        </>
-                        )}
+              {!gameStarted ? (
+                <>
 
-               
-                </div>
-         
-        
-    
-        </div>
+                  <button id="startGameBtn" onClick={startGame} className='font-medium text-primary'>Start New Game</button>
+                </>
+              ) : (
+                <>
+                  <button
+                    onClick={closeGames}
+                    className="flex items-center justify-center absolute right-4 top-4 text-center rounded-[12px] font-medium text-[16px]"
+                  >
+                    <IoClose size={24} className="text-[#9a96a6]" />
+                  </button>
+                  <h1 className='text-[16px] font-semibold'>Game Over</h1>
+                  <h2 className='font-medium'>Rewards: <span id="bigScoreEl">{score}</span></h2>
+                  <button className={`bg-${level.class} px-4 py-2 w-full text-[15px] font-semibold rounded-[8px]`} onClick={claimReward}>Claim rewards</button>
+
+                </>
+              )}
+
+
+            </div>
+
+
+
+          </div>
         </div>
       ) : (
         <>
-        <div className='fixed top-[10px] left-0 right-0 px-4 flex justify-between items-center'>
+          <div className='fixed top-[10px] left-0 right-0 px-4 flex justify-between items-center'>
 
-     
-              <div id="scoreEls" className='text-primary text-[16px] font-medium'>Points Gained: {score}</div>
-              {/* <div id="highestEls">Highest Score: {highest}</div> */}
 
-              </div>
+            <div id="scoreEls" className='text-primary text-[16px] font-medium'>Points Gained: {score}</div>
+            {/* <div id="highestEls">Highest Score: {highest}</div> */}
+
+          </div>
         </>
       )}
 
-<div
-        className={`${
-          modalOpen === true ? "visible" : "invisible"
-        } fixed top-[-12px] bottom-0 left-0 z-40 right-0 h-[100vh] bg-[#00000042] flex justify-center items-center backdrop-blur-[6px] px-4`}
+      <div
+        className={`${modalOpen === true ? "visible" : "invisible"
+          } fixed top-[-12px] bottom-0 left-0 z-40 right-0 h-[100vh] bg-[#00000042] flex justify-center items-center backdrop-blur-[6px] px-4`}
       >
-  
 
-    <div className={`${
-          modalOpen === true ? "opacity-100 mt-0 ease-in duration-300" : "opacity-0 mt-[100px]"
-        } w-full bg-modal relative rounded-[16px] flex flex-col justify-center p-8`}>
-          <div className="w-full flex justify-center flex-col items-center space-y-3">
-            <div className="w-full items-center justify-center flex flex-col space-y-2">
-              <IoCheckmarkCircleSharp size={32} className={`text-${level.class}`}/>
+
+        <div className={`${modalOpen === true ? "opacity-100 mt-0 ease-in duration-300" : "opacity-0 mt-[100px]"
+          } w-full bg-modal relative rounded-[16px] flex flex-col justify-center p-8`}>
+          <div className="flex flex-col items-center justify-center w-full space-y-3">
+            <div className="flex flex-col items-center justify-center w-full space-y-2">
+              <IoCheckmarkCircleSharp size={32} className={`text-${level.class}`} />
               <p className='font-medium'>Let's go!!</p>
             </div>
             <h3 className="font-medium text-[20px] text-[#ffffff] pt-2 pb-2">
               <span className={`text-${level.class}`}>+{formatNumberCliam(score)}</span> EN CLAIMED
             </h3>
             <p className="pb-6 text-[#9a96a6] text-[15px] w-full text-center">
-             Play more! something huge is coming! Play more and earn more EN now! 
+              Play more! something huge is coming! Play more and earn more EN now!
             </p>
           </div>
 
-          <div className="w-full flex justify-center items-center flex-col space-y-3">
+          <div className="flex flex-col items-center justify-center w-full space-y-3">
             <button
               onClick={closeModal}
               className={`bg-${level.class} w-fit py-[10px] px-6 flex items-center justify-center text-center rounded-[12px] font-medium text-[16px]`}
             >
-            Play Again (+{shooters} left)
+              Play Again (+{shooters} left)
             </button>
-    
+
 
 
 
             <NavLink to="/"
               className={`bg-btn2 text-primary w-fit py-[10px] px-6 flex items-center justify-center text-center rounded-[12px] font-medium text-[16px]`}
             >
-            Exit Game
+              Exit Game
             </NavLink>
           </div>
         </div>
       </div>
 
       <div className='w-full absolute top-[50px] left-0 right-0 flex justify-center z-50 pointer-events-none select-none'>
-      {congrats ? (<img src='/congrats.gif' alt="congrats" className="w-[80%]"/>) : (<></>)}
+        {congrats ? (<img src='/congrats.gif' alt="congrats" className="w-[80%]" />) : (<></>)}
       </div>
 
     </div>
