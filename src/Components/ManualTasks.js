@@ -167,7 +167,7 @@ const ManualTasks = () => {
   return (
     <>
 
-      {/* {manualTasks.map(task => {
+      {manualTasks.map(task => {
         const userTask = userManualTasks.find(t => t.taskId === task.id);
         const isTaskCompleted = userTask ? userTask.completed : false;
         const isTaskSaved = !!userTask;
@@ -217,20 +217,20 @@ const ManualTasks = () => {
 
                   {isTaskSaved && !isTaskCompleted && (
                     <>
-                                            <button
-                          onClick={() => confirmTask(task.id)}
-                          className="w-fit py-[6px] px-[1.2rem] font-medium bg-[#494949] text-[#b8b8b8] rounded-[6px]"
-                        >
-                          Done
-                        </button>
- 
-                    <button
-                      onClick={() => claimTask(task.id)}
-                      className={`w-fit py-[6px] px-4 font-medium bg-${level.class} rounded-[6px]`}
-                      disabled={claiming[task.id]}
-                    >
-                      {claiming[task.id] ? 'Claiming...' : 'Claim'}
-                    </button>
+                      <button
+                        onClick={() => confirmTask(task.id)}
+                        className="w-fit py-[6px] px-[1.2rem] font-medium bg-[#494949] text-[#b8b8b8] rounded-[6px]"
+                      >
+                        Done
+                      </button>
+
+                      <button
+                        onClick={() => claimTask(task.id)}
+                        className={`w-fit py-[6px] px-4 font-medium bg-${level.class} rounded-[6px]`}
+                        disabled={claiming[task.id]}
+                      >
+                        {claiming[task.id] ? 'Claiming...' : 'Claim'}
+                      </button>
                     </>
                   )}
 
@@ -250,15 +250,15 @@ const ManualTasks = () => {
 
                   {isTaskCompleted && (
                     <>
-                    <span className="w-fit py-[6px] px-4 font-medium bg-[#494949] text-[#b8b8b8] rounded-[6px]">Completed</span>
+                      <span className="w-fit py-[6px] px-4 font-medium bg-[#494949] text-[#b8b8b8] rounded-[6px]">Completed</span>
 
-                    <span className='mr-[6px]'>
+                      <span className='mr-[6px]'>
 
-<IoCheckmarkCircleSharp size={24} className={`text-${level.class}`}/>
+                        <IoCheckmarkCircleSharp size={24} className={`text-${level.class}`} />
 
-</span>
+                      </span>
                     </>
-                    
+
                   )}
 
                 </div>
@@ -266,7 +266,7 @@ const ManualTasks = () => {
             </div>
           </div>
         );
-      })} */}
+      })}
 
       <div className='w-full absolute top-[50px] left-0 right-0 flex justify-center z-50 pointer-events-none select-none'>
         {congrats ? (<img src='/congrats.gif' alt="congrats" className="w-[80%]" />) : (<></>)}
