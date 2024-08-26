@@ -89,7 +89,7 @@ Join now! 👉`,
   };
 
   const fallbackShare = (shareData) => {
-    
+
     const encodedText = encodeURIComponent(
       // eslint-disable-next-line
       `🚀 Join the Engage Bot and start tapping and earning now! 🚀
@@ -194,7 +194,7 @@ Join now! 👉 ${shareData.url}`
       ) : (
         <>
           <Animate>
-            <div className="w-full pt-2 justify-center flex-col space-y-3 px-5">
+            <div className="flex-col justify-center w-full px-5 pt-2 space-y-3">
               <div className="w-full">
                 <h1 className="font-semibold text-[18px] pb-1">
                   Invite friends, get rewards!
@@ -231,7 +231,7 @@ Join now! 👉 ${shareData.url}`
 
               {/*  */}
 
-              <div className="w-full flex items-center justify-between space-x-3 pb-3">
+              <div className="flex items-center justify-between w-full pb-3 space-x-3">
                 <div className="w-[48.5%] flex flex-col font-medium text-[14px] bg-cards h-[85px] rounded-[10px] px-4 py-2 justify-start text-left relative">
                   <h2 className="!m-0 font-semibold">
                     {loading ? ( // Display loading indicator if data is fetching
@@ -258,16 +258,16 @@ Join now! 👉 ${shareData.url}`
                     <span className="text-[22px] small-text">
                       {formatNumber(refBonus)}
                     </span>
-                    <span className="text-[18px] small-text2"> EN</span>
+                    <span className="text-[18px] small-text2">  $ENG</span>
                   </h2>
-                  <div className="w-full flex items-start justify-between">
+                  <div className="flex items-start justify-between w-full">
                     <p className="text-[10px] small-text3 max-w-[10em]">
                       10% of your frens earnings
                     </p>
                   </div>
                 </div>
               </div>
-              <div className="w-full flex justify-between items-center">
+              <div className="flex items-center justify-between w-full">
                 <h3 className="font-semibold small-text text-[18px] pl-1">
                   Frens list
                 </h3>
@@ -284,7 +284,7 @@ Join now! 👉 ${shareData.url}`
                 id="refer"
                 className="w-full h-[60vh] scroller rounded-[10px] overflow-y-auto pt-2 pb-[180px]"
               >
-                <div className="w-full flex flex-col space-y-3">
+                <div className="flex flex-col w-full space-y-3">
                   {loading ? (
                     <p className="w-full text-center">checking...</p>
                   ) : referrals.length === 0 ? (
@@ -299,7 +299,7 @@ Join now! 👉 ${shareData.url}`
                           key={index}
                           className="bg-[#2b2b2b96] text-[14px] rounded-[10px] p-[14px] flex flex-wrap justify-between items-center"
                         >
-                          <div className="flex flex-1 flex-col space-y-1">
+                          <div className="flex flex-col flex-1 space-y-1">
                             <h2 className="pl-1 text-[15px] font-semibold">
                               {user.username}
                             </h2>

@@ -407,13 +407,13 @@ const TapEarn = () => {
 
         <Animate>
 
-          <div className='w-full flex justify-center flex-col pt-3 homee'>
-            <div className='w-full flex justify-center flex-col space-y-3 px-5'>
+          <div className='flex flex-col justify-center w-full pt-3 homee'>
+            <div className='flex flex-col justify-center w-full px-5 space-y-3'>
 
-              <h1 className='flex w-full justify-center items-center space-x-1'>
+              <h1 className='flex items-center justify-center w-full space-x-1'>
                 <img src="/engagetap2.svg" className='w-[28px] animate-pulse' alt='engagecoin' />
                 <span className='text-[26px] balancy font-bold'>
-                  <span className='pl-[2px]'>{formatNumber(balance + refBonus)} <span className=''>ENG</span></span>
+                  <span className='pl-[2px]'>{formatNumber(balance + refBonus)} <span className=''>$ENG</span></span>
                 </span>
               </h1>
               <div onClick={() => setShowLevel(true)} className='w-full flex space-x-1 items-center !mt-[4px] pt-[2px] pb-[14px] justify-center'>
@@ -429,7 +429,7 @@ const TapEarn = () => {
               </div>
             </div>
 
-            {/* <button onClick={handleRefillClick} className='bg-black py-2'>
+            {/* <button onClick={handleRefillClick} className='py-2 bg-black'>
   REFILL
 </button> */}
 
@@ -449,12 +449,12 @@ const TapEarn = () => {
                       </p>
                     </div>
 
-                    <div className="w-full flex flex-col space-y-3 pt-3 pb-4">
+                    <div className="flex flex-col w-full pt-3 pb-4 space-y-3">
 
 
 
                       <button onClick={tapGame} className="w-full justify-center p-3 flex flex-col space-y-1 bg-cards rounded-[12px]">
-                        <div className="flex space-x-3 w-full items-center">
+                        <div className="flex items-center w-full space-x-3">
                           <span className='w-[60px]'>
                             <img src={level.imgUrl} alt={level.name} className='w-[60px]' />
                           </span>
@@ -477,7 +477,7 @@ const TapEarn = () => {
                       </button>
 
                       <NavLink to="/speedo" className="w-full justify-center p-3 flex flex-col space-y-1 bg-cards rounded-[12px]">
-                        <div className="flex space-x-3 w-full items-center">
+                        <div className="flex items-center w-full space-x-3">
                           <span className='w-[60px]'>
                             <img src='/shots.webp' alt={level.name} className='w-[60px]' />
                           </span>
@@ -532,11 +532,11 @@ const TapEarn = () => {
 
 
             {openTap && (
-              <div className='w-full flex flex-col space-y-3 px-5'>
+              <div className='flex flex-col w-full px-5 space-y-3'>
 
 
 
-                <div className='w-full flex items-center justify-center space-x-5'>
+                <div className='flex items-center justify-center w-full space-x-5'>
                   <div className='bg-headerCard barTitle py-[10px] px-5 w-[45%] flex justify-center space-x-1 items-center rounded-[6px] text-[15px] font-medium'>
                     <span className='text-[16px]'>
                       <PiHandTap size={18} className={`text-${level.class}`} />
@@ -565,7 +565,7 @@ const TapEarn = () => {
                   </div>
                 </div>
 
-                <div className='w-full flex justify-center items-center pt-6 peeyo relative'>
+                <div className='relative flex items-center justify-center w-full pt-6 peeyo'>
                   <img id="fire2" src='/coinsup.gif' alt='refiler' className='rotate-[180deg] invisible absolute top-[-50px] z-50' />
                   <div id="fire" class={`pyro absolute invisible ease-in duration-100`}>
                     <div class="before"></div>
@@ -648,7 +648,7 @@ const TapEarn = () => {
                       <>
                         <h3 className='font-semibold text-[24px]'>
 
-                          <span className='pl-[2px]'>{points} <span className={`text-${level.class}`}>ENG</span></span>
+                          <span className='pl-[2px]'>{points} <span className={`text-${level.class}`}>$ENG</span></span>
 
                         </h3>
                         <button
@@ -687,8 +687,8 @@ const TapEarn = () => {
 
               <div className={`${openClaim === true ? "opacity-100 mt-0 ease-in duration-300" : "opacity-0 mt-[100px]"
                 } w-full bg-modal relative rounded-[16px] flex flex-col justify-center p-8`}>
-                <div className="w-full flex justify-center flex-col items-center space-y-3">
-                  <div className="w-full items-center justify-center flex flex-col space-y-2">
+                <div className="flex flex-col items-center justify-center w-full space-y-3">
+                  <div className="flex flex-col items-center justify-center w-full space-y-2">
                     <IoCheckmarkCircleSharp size={32} className={`text-${level.class}`} />
                     <p className='font-medium'>Let's go!!</p>
                   </div>
@@ -700,7 +700,7 @@ const TapEarn = () => {
                   </p>
                 </div>
 
-                <div className="w-full flex justify-center">
+                <div className="flex justify-center w-full">
                   <button
                     onClick={closeClaimer}
                     className={`bg-${level.class} w-fit py-[10px] px-6 flex items-center justify-center text-center rounded-[12px] font-medium text-[16px]`}

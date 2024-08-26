@@ -271,10 +271,10 @@ const Boost = () => {
     <>
 
       <Animate>
-        <div className="w-full pt-1 justify-center flex-col space-y-3">
+        <div className="flex-col justify-center w-full pt-1 space-y-3">
 
-          <div className='w-full flex-col space-y-4 flex px-5 pb-3 z-10'>
-            <div className='w-full flex justify-between'>
+          <div className='z-10 flex flex-col w-full px-5 pb-3 space-y-4'>
+            <div className='flex justify-between w-full'>
 
               <button onClick={() => setShowLevel(true)} className='w-[55%] flex space-x-1 items-center'>
                 <span className='flex items-center justify-center'>
@@ -317,7 +317,7 @@ const Boost = () => {
             <div id="refer" className='w-full h-screen homescreen rounded-tl-[40px] rounded-tr-[40px] mt-[2px] px-5 pt-[6px]'>
 
               <div className="w-full flex flex-col overflow-y-auto pb-[100px] h-[60vh] scroller">
-                <div className="w-full flex items-center justify-between space-x-4 pt-7 pb-4">
+                <div className="flex items-center justify-between w-full pb-4 space-x-4 pt-7">
 
                   <button
                     onClick={() => setIsUpgradeModalVisible(true)}
@@ -365,7 +365,7 @@ const Boost = () => {
                 </div>
 
                 {/*  */}
-                <div className="w-full flex-col space-y-6">
+                <div className="flex-col w-full space-y-6">
 
                   <div onClick={openit} class="isolate cardios aspect-video w-full rounded-xl relative overflow-hidden p-6">
 
@@ -374,7 +374,7 @@ const Boost = () => {
                     />
                     <div className="backdrop-blur-[10px] cards absolute left-0 right-0 top-0 bottom-0 z-0 pointer-events-none" />
 
-                    <div className="flex w-full flex-col relative z-10 space-y-1">
+                    <div className="relative z-10 flex flex-col w-full space-y-1">
                       <div className="flex justify-between">
 
                         <PiRocketLaunchFill size={40} className="text-[#bcbcbc] xxImg" />
@@ -404,7 +404,7 @@ const Boost = () => {
                   {/*  */}
 
                   <button onClick={() => setOpenInfoTwo(true)} className="w-full justify-center p-3 flex flex-col space-y-1 bg-cards rounded-[12px]">
-                    <div className="flex space-x-2 w-full">
+                    <div className="flex w-full space-x-2">
                       <GiBoltDrop size={45} className="text-[#bcbcbc] boostImg" />
                       <div className="font-semibold boostTitle text-[15px] flex-1 items-start text-left flex flex-col space-y-[2px]">
                         <h3> Airdrop Early Access</h3>
@@ -438,8 +438,8 @@ const Boost = () => {
 
             <div ref={infoRef} className={`${openInfo === true ? "opacity-100 mt-0 ease-in duration-300" : "opacity-0 mt-[100px]"
               } w-full bg-[#303030] relative rounded-[16px] flex flex-col justify-center p-8`}>
-              <div className="w-full flex justify-center flex-col items-center space-y-3">
-                <div className="w-full items-center justify-center flex flex-col space-y-2">
+              <div className="flex flex-col items-center justify-center w-full space-y-3">
+                <div className="flex flex-col items-center justify-center w-full space-y-2">
                   <PiRocketLaunchFill size={32} className={`text-${level.class}`} />
                   <p className='font-medium'>x2 balance</p>
                 </div>
@@ -451,7 +451,7 @@ const Boost = () => {
                 </p>
               </div>
 
-              <div className="w-full flex justify-center">
+              <div className="flex justify-center w-full">
                 <button
                   onClick={() => setOpenInfo(false)}
                   className={`bg-${level.class} w-fit py-[10px] px-6 flex items-center justify-center text-center rounded-[12px] font-medium text-[16px]`}
@@ -472,8 +472,8 @@ const Boost = () => {
 
             <div ref={infoRefTwo} className={`${openInfoTwo === true ? "opacity-100 mt-0 ease-in duration-300" : "opacity-0 mt-[100px]"
               } w-full bg-[#303030] relative rounded-[16px] flex flex-col justify-center p-8`}>
-              <div className="w-full flex justify-center flex-col items-center space-y-3">
-                <div className="w-full items-center justify-center flex flex-col space-y-2">
+              <div className="flex flex-col items-center justify-center w-full space-y-3">
+                <div className="flex flex-col items-center justify-center w-full space-y-2">
                   <GiBoltDrop size={32} className={`text-${level.class}`} />
                   <p className='font-medium'>early access</p>
                 </div>
@@ -485,7 +485,7 @@ const Boost = () => {
                 </p>
               </div>
 
-              <div className="w-full flex justify-center">
+              <div className="flex justify-center w-full">
                 <button
                   onClick={() => setOpenInfoTwo(false)}
                   className={`bg-${level.class} w-fit py-[10px] px-6 flex items-center justify-center text-center rounded-[12px] font-medium text-[16px]`}
@@ -512,7 +512,7 @@ const Boost = () => {
           >
             <div className={`${isUpgradeModalVisible ? "opacity-100 mt-0 ease-in duration-300" : "opacity-0 mt-[100px]"
               } w-full bg-modal relative rounded-[16px] flex flex-col justify-center p-8`}>
-              <div className="w-full flex justify-center flex-col items-center space-y-3">
+              <div className="flex flex-col items-center justify-center w-full space-y-3">
                 <button
                   onClick={() => setIsUpgradeModalVisible(false)}
                   className="flex items-center justify-center absolute right-8 top-8 text-center rounded-[12px] font-medium text-[16px]"
@@ -532,10 +532,10 @@ const Boost = () => {
                 </span>
 
                 <p className="pb-6 text-[14px] font-medium w-full text-center">
-                  Increase the amount of EN you can earn per one tap. <br />
+                  Increase the amount of $ENG you can earn per one tap. <br />
                   +1 per tap for each level.
                 </p>
-                <div className="w-full flex justify-center">
+                <div className="flex justify-center w-full">
                   <button
                     onClick={handleUpgrade}
                     disabled={!hasSufficientBalance}
@@ -554,7 +554,7 @@ const Boost = () => {
           >
             <div className={`${isUpgradeModalVisibleEn ? "opacity-100 mt-0 ease-in duration-300" : "opacity-0 mt-[100px]"
               } w-full bg-modal relative rounded-[16px] flex flex-col justify-center p-8`}>
-              <div className="w-full flex justify-center flex-col items-center space-y-3">
+              <div className="flex flex-col items-center justify-center w-full space-y-3">
                 <button
                   onClick={() => setIsUpgradeModalVisibleEn(false)}
                   className="flex items-center justify-center absolute right-8 top-8 text-center rounded-[12px] font-medium text-[16px]"
@@ -577,7 +577,7 @@ const Boost = () => {
                   Increase the limit of your energy storage. <br />
                   +500 energy limit for each level.
                 </p>
-                <div className="w-full flex justify-center">
+                <div className="flex justify-center w-full">
                   <button
                     onClick={handleEnergyUpgrade}
                     disabled={!hasSufficientBalanceEn}
