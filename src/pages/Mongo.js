@@ -152,6 +152,7 @@ const TapEarn = () => {
         localStorage.setItem('energy', newEnergy);
         setIsDisabled(true);
         const timer = setInterval(() => {
+          // const newTimeLeft = new Date(endTime) - new Date();
           const newTimeLeft = new Date(endTime) - new Date();
           if (newTimeLeft <= 0) {
             clearInterval(timer);
@@ -161,7 +162,8 @@ const TapEarn = () => {
             setEnergy(battery.energy);
 
           } else {
-            setTimeRemaining(newTimeLeft);
+            setTimeRemaining(25000);
+            // setTimeRemaining(newTimeLeft);
             setIsRefilling(true);
           }
         }, 1000);
@@ -328,7 +330,9 @@ const TapEarn = () => {
       if (newTimeLeft > 0) {
         setIsDisabled(true);
         setIsTimerVisible(true);
-        setTimeRemaining(newTimeLeft);
+        // setTimeRemaining(newTimeLeft);
+        setTimeRemaining(25000);
+
         const timer = setInterval(() => {
           const updatedTimeLeft = endTime - new Date();
           if (updatedTimeLeft <= 0) {
@@ -338,7 +342,9 @@ const TapEarn = () => {
             setIsTimerVisible(false);
             setEnergy(battery.energy);
           } else {
-            setTimeRemaining(updatedTimeLeft);
+            // setTimeRemaining(updatedTimeLeft);
+            setTimeRemaining(25000);
+
           }
         }, 1000);
       } else {
