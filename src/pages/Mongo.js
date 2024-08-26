@@ -669,7 +669,10 @@ const TapEarn = () => {
                   </div>
 
                   <p className='text-[12px] !mt-3 texthome w-full px-[16px] text-center'>
-                    You have energy left! Tap and continue the fun! Let's go 🤙
+                    After you run out of energy it still says the same text. - this needs to change if you don't have any energy left to ;
+
+                    No energy left! ⚡️ Wait for your energy to refill, or explore other games to keep earning $ENG tokens! 🎮💰
+
                   </p>
 
 

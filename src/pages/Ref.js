@@ -63,17 +63,20 @@ Join now! 👉 https://t.me/concept_devbot?start=r${id}`;
 
   const handleShare = async () => {
     const shareData = {
-      title: "Mine EN tokens now!",
+      title: "Earn Free $ENG Tokens Now!",
       // eslint-disable-next-line
       url: `https://t.me/engagetapbot?start=r${id}\n\ `, // Replace with your link
-      text: `🚀 Join the Engage Bot and start tapping and earning now! 🚀
+      text: `🚀 Join Me and start earning free $ENG with the Engage Tap Bot now! 💸
 
-The biggest part of Engage Bot TOKEN distribution will occur among the players here. 💰
 
-Got friends, relatives, co-workers? 🤝
-Bring them all into the game. More buddies, more coins! 🎉
+The biggest share of Engage Bot tokens is reserved for the community! 🏆
 
-Join now! 👉`,
+
+Climb the leaderboard and claim your part of those free $ENG tokens. 🎯
+
+
+👫 Invite friends, family, or co-workers and start earning together!
+ The more friends, the more coins! 💰🎉`,
     };
 
     if (navigator.share) {
