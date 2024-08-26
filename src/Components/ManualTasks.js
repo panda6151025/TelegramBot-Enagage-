@@ -40,15 +40,15 @@ const ManualTasks = () => {
           setCountdowns(prevState => ({ ...prevState, [taskId]: null })); // Hide the timer
           setButtonText(prevState => ({ ...prevState, [taskId]: 'Verifying' }));
           setModalMessage(
-            <div className="w-full flex justify-center flex-col items-center space-y-3">
-            <div className="w-full items-center justify-center flex flex-col space-y-2">
-              <CiNoWaitingSign size={32} className={`text-${level.class}`}/>
-              <p className='font-medium text-center'>Wait 30 minutes for moderation check to claim bonus!!</p>
+            <div className="flex flex-col items-center justify-center w-full space-y-3">
+              <div className="flex flex-col items-center justify-center w-full space-y-2">
+                <CiNoWaitingSign size={32} className={`text-${level.class}`} />
+                <p className='font-medium text-center'>Wait 30 minutes for moderation check to claim bonus!!</p>
+              </div>
+              <p className="pb-6 text-[#9a96a6] text-[15px] w-full text-center">
+                If you have not performed this task make sure you do so within 30 minutes to claim your bonus!
+              </p>
             </div>
-            <p className="pb-6 text-[#9a96a6] text-[15px] w-full text-center">
-              If you have not performed this task make sure you do so within 30 minutes to claim your bonus!
-            </p>
-          </div>
           );
           setModalOpen(true);
 
@@ -98,19 +98,19 @@ const ManualTasks = () => {
       );
 
       setModalMessage(
-        <div className="w-full flex justify-center flex-col items-center space-y-3">
-        <div className="w-full items-center justify-center flex flex-col space-y-2">
-          <IoCheckmarkCircleSharp size={32} className={`text-${level.class}`}/>
-          <p className='font-medium text-center'>Let's go!!</p>
+        <div className="flex flex-col items-center justify-center w-full space-y-3">
+          <div className="flex flex-col items-center justify-center w-full space-y-2">
+            <IoCheckmarkCircleSharp size={32} className={`text-${level.class}`} />
+            <p className='font-medium text-center'>Let's go!!</p>
+          </div>
+          <h3 className="font-medium text-[20px] text-[#ffffff] pt-2 pb-2">
+            <span className={`text-${level.class}`}>+{formatNumberCliam(task.bonus)}</span> EN CLAIMED
+          </h3>
+          <p className="pb-6 text-[15px] w-full text-center">
+            Keep performing new tasks! something huge is coming! Perform more and earn more ENG now!
+          </p>
         </div>
-        <h3 className="font-medium text-[20px] text-[#ffffff] pt-2 pb-2">
-          <span className={`text-${level.class}`}>+{formatNumberCliam(task.bonus)}</span> EN CLAIMED
-        </h3>
-        <p className="pb-6 text-[15px] w-full text-center">
-          Keep performing new tasks! something huge is coming! Perform more and earn more ENG now! 
-        </p>
-      </div>
-    );
+      );
       setModalOpen(true);
       setClaimedBonus(task.bonus);
       setCongrats(true);
@@ -167,7 +167,7 @@ const ManualTasks = () => {
   return (
     <>
 
-      {manualTasks.map(task => {
+      {/* {manualTasks.map(task => {
         const userTask = userManualTasks.find(t => t.taskId === task.id);
         const isTaskCompleted = userTask ? userTask.completed : false;
         const isTaskSaved = !!userTask;
@@ -180,7 +180,7 @@ const ManualTasks = () => {
                 <img alt="engy" src={task.icon} className='w-[40px]' />
               </div>
 
-              <div className='flex w-full flex-col justify-between h-full space-y-2'>
+              <div className='flex flex-col justify-between w-full h-full space-y-2'>
                 <h1 className="text-[15px] text-nowrap line-clamp-1 mr-[5px] font-semibold">
                   {task.title}
                 </h1>
@@ -266,22 +266,22 @@ const ManualTasks = () => {
             </div>
           </div>
         );
-      })}
+      })} */}
 
-<div className='w-full absolute top-[50px] left-0 right-0 flex justify-center z-50 pointer-events-none select-none'>
-      {congrats ? (<img src='/congrats.gif' alt="congrats" className="w-[80%]"/>) : (<></>)}
+      <div className='w-full absolute top-[50px] left-0 right-0 flex justify-center z-50 pointer-events-none select-none'>
+        {congrats ? (<img src='/congrats.gif' alt="congrats" className="w-[80%]" />) : (<></>)}
       </div>
 
       <div
         className={`${modalOpen === true ? "visible" : "invisible"} fixed top-[-12px] bottom-0 left-0 z-40 right-0 h-[100vh] bg-[#00000042] flex justify-center items-center backdrop-blur-[6px] px-4`}
       >
         <div className={`${modalOpen === true ? "opacity-100 mt-0 ease-in duration-300" : "opacity-0 mt-[100px]"} w-full bg-modal relative rounded-[16px] flex flex-col justify-center p-8`}>
-          
-          
-            {modalMessage}
-        
 
-          <div className="w-full flex justify-center">
+
+          {modalMessage}
+
+
+          <div className="flex justify-center w-full">
             <button
               onClick={closeModal}
               className={`bg-${level.class} w-fit py-[10px] px-6 flex items-center justify-center text-center rounded-[12px] font-medium text-[16px]`}

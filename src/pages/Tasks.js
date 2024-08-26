@@ -247,7 +247,7 @@ const TasksList = () => {
             >
 
 
-              {/* <ManualTasks /> */}
+              <ManualTasks />
               {tasks.map((task) => (
                 <>
                   <div
