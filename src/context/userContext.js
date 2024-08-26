@@ -48,7 +48,7 @@ export const UserProvider = ({ children }) => {
         const userRef = doc(db, 'telegramUsers', userId.toString());
         const userDoc = await getDoc(userRef);
         if (userDoc.exists()) {
-          alert('User already exists in Firestore');
+          // alert('User already exists in Firestore');
           const userData = userDoc.data();
           setBalance(userData.balance);
           setTapBalance(userData.tapBalance);
@@ -67,7 +67,7 @@ export const UserProvider = ({ children }) => {
           setInitialized(true);
           setLoading(false);
           fetchData(userData.userId); // Fetch data for the existing user
-          alert("Battery is:", userData.battery.energy)
+          // alert("Battery is:", userData.battery.energy)
           return;
         }
 
@@ -90,7 +90,7 @@ export const UserProvider = ({ children }) => {
         };
 
         await setDoc(userRef, userData);
-        alert('User saved in Firestore');
+        // alert('User saved in Firestore');
         setEnergy(500)
         setShooters(10)
         setId(userId.toString()); // Set the id state for the new user
@@ -107,7 +107,7 @@ export const UserProvider = ({ children }) => {
                 level: { class: 'bronze', bg: "#b66838", id: 1, name: "Bronze Coin", imgUrl: "/Bronze.webp" }, // Include level with id and name
               })
             });
-            alert('Referrer updated in Firestore');
+            // alert('Referrer updated in Firestore');
           }
         }
 
