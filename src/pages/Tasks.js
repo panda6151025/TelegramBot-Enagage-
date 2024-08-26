@@ -240,14 +240,12 @@ const TasksList = () => {
             id="refer"
             className="w-full h-[60vh] scroller rounded-[10px] overflow-y-auto pt-2 pb-[180px]"
           >
-            <ManualTasks />
-
             {/* tasks */}
             <div
               className={`${activeIndex === 1 ? "block" : "hidden"
                 } w-full flex items-end justify-center flex-col space-y-4`}
             >
-              {tasks.map((task) => (
+              {/* {tasks.map((task) => (
                 <>
                   <div
                     key={task.id}
@@ -303,77 +301,79 @@ const TasksList = () => {
 
                           {/*  */}
 
-                          {countdowns[task.id] ? (
-                            <span className="w-fit py-[6px] px-4 font-medium bg-btn2 rounded-[6px]">
-                              checking.. {countdowns[task.id]}s
-                            </span>
-                          ) : (
-                            <>
-                              {task.verified &&
-                                countdownFinished[task.id] &&
-                                !completedTasks.includes(task.id) ? (
-                                <span className="w-fit py-[6px] px-[1.2rem] absolute left-[-1px] font-medium bg-[#494949] text-[#b8b8b8] rounded-[6px]">
-                                  Done
-                                </span>
-                              ) : (
-                                currentError[task.id] && (
-                                  <span
-                                    className={`text-${level.class} pt-2 text-xs w-full`}
-                                  >
-                                    {currentError[task.id]}
-                                  </span>
-                                )
-                              )}
-                              {completedTasks.includes(task.id) && (
-                                <>
-                                  <span className="w-fit py-[6px] px-4 font-medium bg-[#494949] text-[#b8b8b8] rounded-[6px]">
-                                    Completed
-                                  </span>
+              {countdowns[task.id] ? (
+                <span className="w-fit py-[6px] px-4 font-medium bg-btn2 rounded-[6px]">
+                  checking.. {countdowns[task.id]}s
+                </span>
+              ) : (
+                <>
+                  {task.verified &&
+                    countdownFinished[task.id] &&
+                    !completedTasks.includes(task.id) ? (
+                    <span className="w-fit py-[6px] px-[1.2rem] absolute left-[-1px] font-medium bg-[#494949] text-[#b8b8b8] rounded-[6px]">
+                      Done
+                    </span>
+                  ) : (
+                    currentError[task.id] && (
+                      <span
+                        className={`text-${level.class} pt-2 text-xs w-full`}
+                      >
+                        {currentError[task.id]}
+                      </span>
+                    )
+                  )}
+                  {completedTasks.includes(task.id) && (
+                    <>
+                      <span className="w-fit py-[6px] px-4 font-medium bg-[#494949] text-[#b8b8b8] rounded-[6px]">
+                        Completed
+                      </span>
 
-                                  <span className="mr-[6px]">
-                                    <IoCheckmarkCircleSharp
-                                      size={24}
-                                      className={`text-${level.class}`}
-                                    />
-                                  </span>
-                                </>
-                              )}
-                            </>
-                          )}
-
-                          {/*  */}
-
-                          {!completedTasks.includes(task.id) && (
-                            <button
-                              onClick={() => claimTask(task.id)}
-                              disabled={
-                                !task.verified ||
-                                claiming[task.id] ||
-                                !countdownFinished[task.id]
-                              }
-                              className={`w-fit py-[6px] px-4 font-medium bg-btn rounded-[6px] ${task.verified && countdownFinished[task.id]
-                                ? ""
-                                : "hidden"
-                                }`}
-                            >
-                              {claiming[task.id] ? "Claiming..." : "Claim"}
-                            </button>
-                          )}
-                        </div>
-
-                        {claimError && (
-                          <p
-                            className={`text-${level.class} pt-2 text-xs w-full`}
-                          >
-                            {claimError}
-                          </p>
-                        )}
-                      </div>
-                    </div>
-                  </div>
+                      <span className="mr-[6px]">
+                        <IoCheckmarkCircleSharp
+                          size={24}
+                          className={`text-${level.class}`}
+                        />
+                      </span>
+                    </>
+                  )}
                 </>
-              ))}
+              )}
 
+              {/*  */}
+
+              {!completedTasks.includes(task.id) && (
+                <button
+                  onClick={() => claimTask(task.id)}
+                  disabled={
+                    !task.verified ||
+                    claiming[task.id] ||
+                    !countdownFinished[task.id]
+                  }
+                  className={`w-fit py-[6px] px-4 font-medium bg-btn rounded-[6px] ${task.verified && countdownFinished[task.id]
+                    ? ""
+                    : "hidden"
+                    }`}
+                >
+                  {claiming[task.id] ? "Claiming..." : "Claim"}
+                </button>
+              )}
+            </div>
+
+            {claimError && (
+              <p
+                className={`text-${level.class} pt-2 text-xs w-full`}
+              >
+                {claimError}
+              </p>
+            )}
+          </div>
+        </div>
+      </div>
+    </>
+  ))
+} */}
+
+              <ManualTasks />
 
               <div
                 className={`${modalOpen === true ? "visible" : "invisible"
@@ -415,17 +415,17 @@ const TasksList = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </div >
 
-            {/* challenges */}
+  {/* challenges */ }
 
-            <div
-              className={`${activeIndex === 2 ? "block" : "hidden"
-                } w-full flex items-end justify-center flex-col space-y-4`}
+  < div
+className = {`${activeIndex === 2 ? "block" : "hidden"
+  } w-full flex items-end justify-center flex-col space-y-4`}
             >
-              <MilestoneRewards />
-            </div>
-          </div>
+  <MilestoneRewards />
+            </div >
+          </div >
 
           <div className="w-full absolute top-[50px] left-0 right-0 flex justify-center z-50 pointer-events-none select-none">
             {congrats ? (
@@ -436,9 +436,9 @@ const TasksList = () => {
           </div>
 
           <Levels showLevel={showLevel} setShowLevel={setShowLevel} />
-        </div>
-        <Outlet />
-      </Animate>
+        </div >
+  <Outlet />
+      </Animate >
     </>
   );
 };
