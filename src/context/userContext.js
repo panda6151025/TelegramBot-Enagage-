@@ -247,7 +247,7 @@ export const UserProvider = ({ children }) => {
 
     if (location.pathname === '/rewards') {
       rewards.style.background = `${level.bg}`;
-      rewards.style.color = "#000";
+      // rewards.style.color = "#000";
       rewards.style.width = "50px";
       rewards.style.height = "50px";
       rewards.style.marginBottom = "4px";

@@ -42,8 +42,8 @@ const ReferralRewards = () => {
         setBalance(newBalance);
         setClaimedReferralRewards([...claimedReferralRewards, reward.title]);
         setModalMessage(
-          <div className="w-full flex justify-center flex-col items-center space-y-3">
-            <div className="w-full items-center justify-center flex flex-col space-y-2">
+          <div className="flex flex-col items-center justify-center w-full space-y-3">
+            <div className="flex flex-col items-center justify-center w-full space-y-2">
               <IoCheckmarkCircleSharp size={32} className="text-[#e1f75c]" />
               <p className="font-medium text-center">Great job!</p>
             </div>
@@ -116,9 +116,9 @@ const ReferralRewards = () => {
   return (
     <Animate>
 
-      <div className="w-full pt-2 justify-center flex-col space-y-6 px-5">
+      <div className="flex-col justify-center w-full px-5 pt-2 space-y-6">
 
-        <div className='w-full flex justify-between'>
+        <div className='flex justify-between w-full'>
 
           <button onClick={() => setShowLevel(true)} className='w-[55%] flex space-x-1 items-center'>
             <span className='flex items-center justify-center'>
@@ -146,7 +146,7 @@ const ReferralRewards = () => {
 
         </div>
 
-        <div className='w-full flex items-center justify-between'>
+        <div className='flex items-center justify-between w-full'>
 
           <div onClick={() => handleMenu(1)} className={`${activeIndex === 1 ? 'bg-headerCard text-[#ebebeb]' : ''} barTitle rounded-[6px] text-[#c6c6c6] py-[10px] px-3 w-[45%] flex space-x-2 justify-center text-center text-[15px] font-semibold items-center`}>
             <PiNotebook size={16} className="" />
@@ -173,10 +173,10 @@ const ReferralRewards = () => {
                 const isClaimable = referrals.length >= reward.referralsRequired && !claimedReferralRewards.includes(reward.title);
                 return (
                   <div key={reward.title} className="bg-cards w-full rounded-[15px] p-[14px] flex flex-wrap justify-between items-center">
-                    <div className="flex flex-1 items-center space-x-2">
+                    <div className="flex items-center flex-1 space-x-2">
 
                       <div className=''>
-                        <img src='/frens2.webp' alt="bonuses" className='w-[48px] brightness-[.85] rounded-[8px]' />
+                        <img src='/engagetap2.svg' alt="bonuses" className='w-[48px] brightness-[.85] rounded-[8px]' />
                       </div>
                       <div className="flex flex-col space-y-1">
                         <h2 className="font-medium">{reward.title}</h2>
@@ -217,7 +217,7 @@ const ReferralRewards = () => {
                   } w-full bg-[#303030] relative rounded-[16px] flex flex-col justify-center p-8`}
               >
                 {modalMessage}
-                <div className="w-full flex justify-center">
+                <div className="flex justify-center w-full">
                   <button
                     onClick={closeModal}
                     className="bg-[#383838] w-fit py-[10px] border-[1px] border-[#d3d3d3] px-6 flex items-center justify-center text-center rounded-[12px] font-medium text-[16px]"
