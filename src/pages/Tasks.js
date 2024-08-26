@@ -169,8 +169,8 @@ const TasksList = () => {
   return (
     <>
       <Animate>
-        <div className="w-full pt-1 justify-center flex-col space-y-6 px-5">
-          <div className="w-full flex justify-between">
+        <div className="flex-col justify-center w-full px-5 pt-1 space-y-6">
+          <div className="flex justify-between w-full">
             <button
               onClick={() => setShowLevel(true)}
               className="w-[55%] flex space-x-1 items-center"
@@ -201,7 +201,7 @@ const TasksList = () => {
             </div>
           </div>
 
-          <div className="w-full flex items-center justify-between">
+          <div className="flex items-center justify-between w-full">
             <div
               onClick={() => handleMenu(1)}
               className={`${activeIndex === 1 ? "bg-cards text-[#ebebeb]" : ""
@@ -240,6 +240,8 @@ const TasksList = () => {
             id="refer"
             className="w-full h-[60vh] scroller rounded-[10px] overflow-y-auto pt-2 pb-[180px]"
           >
+            <ManualTasks />
+
             {/* tasks */}
             <div
               className={`${activeIndex === 1 ? "block" : "hidden"
@@ -255,7 +257,7 @@ const TasksList = () => {
                       <div className="w-[60px] h-[60px] rounded-[12px] p-2 absolute bg-[#8a8a8a] left-[-7%] todp-[40px] flex items-center justify-center">
                         <img alt="engy" src={task.icon} className="w-[40px]" />
                       </div>
-                      <div className="flex w-full flex-col justify-between h-full space-y-2">
+                      <div className="flex flex-col justify-between w-full h-full space-y-2">
                         <h1 class="text-[15px] text-nowrap line-clamp-1 mr-[5px] font-medium">
                           {task.title}
                         </h1>
@@ -372,7 +374,6 @@ const TasksList = () => {
                 </>
               ))}
 
-              <ManualTasks />
 
               <div
                 className={`${modalOpen === true ? "visible" : "invisible"
@@ -384,8 +385,8 @@ const TasksList = () => {
                     : "opacity-0 mt-[100px]"
                     } w-full bg-modal relative rounded-[16px] flex flex-col justify-center p-8`}
                 >
-                  <div className="w-full flex justify-center flex-col items-center space-y-3">
-                    <div className="w-full items-center justify-center flex flex-col space-y-2">
+                  <div className="flex flex-col items-center justify-center w-full space-y-3">
+                    <div className="flex flex-col items-center justify-center w-full space-y-2">
                       <IoCheckmarkCircleSharp
                         size={32}
                         className={`text-${level.class}`}
@@ -404,7 +405,7 @@ const TasksList = () => {
                     </p>
                   </div>
 
-                  <div className="w-full flex justify-center">
+                  <div className="flex justify-center w-full">
                     <button
                       onClick={closeModal}
                       className={`bg-${level.class} w-fit py-[10px] px-6 flex items-center justify-center text-center rounded-[12px] font-medium text-[16px]`}
