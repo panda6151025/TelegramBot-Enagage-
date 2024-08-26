@@ -291,10 +291,10 @@ const ManualTasks = () => {
           </div>
         </div>
       </div>
-      {claimedBonus && (
+      {/* {claimedBonus && (
         <>
         </>
-      )}
+      )} */}
     </>
   );
 };
