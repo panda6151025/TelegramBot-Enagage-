@@ -419,7 +419,7 @@ const TapEarn = () => {
               <h1 className='flex items-center justify-center w-full space-x-1'>
                 <img src="/engagetap2.svg" className='w-[28px] animate-pulse' alt='engagecoin' />
                 <span className='text-[26px] balancy font-bold'>
-                  <span className='pl-[2px]'>{formatNumber(balance + refBonus)} <span className=''>$ENG</span></span>
+                  <span className='pl-[2px]'>{formatNumber(balance + refBonus)} <span className=''></span></span>
                 </span>
               </h1>
               <div onClick={() => setShowLevel(true)} className='w-full flex space-x-1 items-center !mt-[4px] pt-[2px] pb-[14px] justify-center'>
@@ -451,7 +451,7 @@ const TapEarn = () => {
                         Play to Earn
                       </h1>
                       <p className='text-[14px] leading-[24px] pr-6'>
-                        Have fun while you earn and accumulate EN tokens now!
+                        Have fun while you earn and accumulate Engage Points now!
                       </p>
                     </div>
 
@@ -470,7 +470,7 @@ const TapEarn = () => {
                               {energy} energy left
                             </p>
                             <span className="text-[#e7e7e7] boostAmount font-medium flex items-center justify-between w-full">
-                              <span className="text-[14px]"> {formatNumber(tapBalance)} EN EARNED </span>
+                              <span className="text-[14px]"> {formatNumber(tapBalance)} ENGAGE POINTS EARNED </span>
 
                             </span>
 

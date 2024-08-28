@@ -223,7 +223,7 @@ const TasksList = () => {
           <div className={`${activeIndex === 1 ? "block" : "hidden"}`}>
             <h1 className="text-[24px] font-semibold">Earn more tokens</h1>
             <p className="text-[14px] leading-[24px]">
-              Perform tasks daily to earn more EN tokens and level up real
+              Perform tasks daily to earn more  Engage Points and level up real
               quick!
             </p>
           </div>
