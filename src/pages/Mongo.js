@@ -493,7 +493,7 @@ const TapEarn = () => {
                               {shooters} plays remaining
                             </p>
                             <span className="text-[#e7e7e7] boostAmount font-medium flex items-center justify-between w-full">
-                              <span className="text-[14px]"> {formatNumber(totalScore)} EN EARNED</span>
+                              <span className="text-[14px]"> {formatNumber(totalScore)} ENGAGE POINTS EARNED</span>
 
                             </span>
 
