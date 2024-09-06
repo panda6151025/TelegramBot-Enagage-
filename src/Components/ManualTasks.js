@@ -200,7 +200,7 @@ const ManualTasks = () => {
                         onClick={() => performTask(task.id)}
                         className="w-fit py-[6px] px-4 font-medium bg-[#595959cc] hover:bg-[#8a8a8a] text-[#fff] hover:text-[#000] ease-in duration-200 rounded-[6px]"
                       >
-                        Perform
+                        Follow Now
                       </button>
                       {countdowns[task.id] === undefined && (
                         <button

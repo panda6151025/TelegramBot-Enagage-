@@ -282,7 +282,7 @@ const TasksList = () => {
                                   task.verified && countdownFinished[task.id]
                                 }
                               >
-                                Perform
+                                Join Now
                               </button>
                               <button
                                 onClick={() => startCountdown(task.id)}
